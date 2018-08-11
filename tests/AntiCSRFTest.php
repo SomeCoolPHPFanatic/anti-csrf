@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises <https://paragonie.com>
  *
@@ -45,12 +46,14 @@
  */
 
 use ParagonIE\AntiCSRF\AntiCSRF;
+use PHPUnit\Framework\TestCase;
 
 /**
  * These are the tests for the anti-csrf class.
  */
-class AntiCSRFTest extends PHPUnit_Framework_TestCase
+class AntiCSRFTest extends TestCase
 {
+
     /**
      * @covers AntiCSRF::insertToken()
      */
@@ -84,7 +87,7 @@ class AntiCSRFTest extends PHPUnit_Framework_TestCase
 
         try {
             $csrft = new AntiCSRF();
-        } catch (\Throwable $ex) {
+        } catch (Throwable $ex) {
             $post = [];
             $session = [];
             $server = $_SERVER;
@@ -101,7 +104,7 @@ class AntiCSRFTest extends PHPUnit_Framework_TestCase
                 $csrft->getFormIndex(),
                 $csrft->getFormToken(),
             ], 
-            \array_keys($result)
+            array_keys($result)
         );
     }
 }

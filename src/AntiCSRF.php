@@ -1,13 +1,5 @@
 <?php
 declare(strict_types=1);
-namespace ParagonIE\AntiCSRF;
-
-use ParagonIE\ConstantTime\{
-    Base64UrlSafe,
-    Binary
-};
-use Error;
-
 /**
  * Copyright (c) 2015 - 2018 Paragon Initiative Enterprises <https://paragonie.com>
  *
@@ -52,8 +44,21 @@ use Error;
  * If you would like to use this library under different terms, please
  * contact Paragon Initiative Enterprises to inquire about a license exemption.
  */
+
+namespace ParagonIE\AntiCSRF;
+
+use ParagonIE\ConstantTime\{
+    Base64UrlSafe,
+    Binary
+};
+use Error;
+
+/**
+ * Full-Featured Anti-CSRF Library.
+ */
 class AntiCSRF
 {
+
     /**
      * @var string
      */
